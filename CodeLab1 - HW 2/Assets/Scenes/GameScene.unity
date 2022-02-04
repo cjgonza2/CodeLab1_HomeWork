@@ -2280,6 +2280,7 @@ GameObject:
   - component: {fileID: 989187395}
   - component: {fileID: 989187394}
   - component: {fileID: 989187397}
+  - component: {fileID: 989187398}
   m_Layer: 0
   m_Name: Donkey
   m_TagString: Untagged
@@ -2381,6 +2382,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &989187398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 989187393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5bc360e76f5acb4bb1f4512e3470f65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1215762836
 GameObject:
   m_ObjectHideFlags: 0
