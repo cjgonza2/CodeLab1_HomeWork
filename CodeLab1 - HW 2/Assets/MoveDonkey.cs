@@ -31,16 +31,14 @@ public class MoveDonkey : MonoBehaviour
         direction = directionArray[directionSelector]; //sets direction to be whatever the selected array value is.
         #endregion
 
-        int timerSelector = Random.Range(0, 4);
-        float functionTimer = timerArray[timerSelector];
+        #region Timer Value Selection
+        int timerSelector = Random.Range(0, 4); //selects a random number between 0 and 4
+        float functionTimer = timerArray[timerSelector]; //sets float value equal to the selected array value. 
+        #endregion
 
         //Debug.Log(direction);
 
         Invoke("DonkeyDirection", functionTimer); //calls direction function after 3 seconds. 
-
-
-
-        //something is happening with the array. it's not properly bounding or its going out of the bounds of the array. 
     }
 
     // Update is called once per frame
@@ -56,16 +54,19 @@ public class MoveDonkey : MonoBehaviour
         //and moves along its xAxis by a given speed. 
         transform.position = UtilScript.Vector3Modify(transform.position, ((direction * donkeySpeed) * Time.deltaTime), 0, 0);
 
-        if (transform.position.x <= -45)
+        #region Boundaries
+        if (transform.position.x <= -45) //if x value is less than or equal to -45
         {
-            direction = -direction;
+            direction = -direction;     //inverses direction. 
             Debug.Log("I reached the border");
         }
-        if (transform.position.x >= 45)
+        if (transform.position.x >= 45) //if x value is greater than or equal to 45
         {
-            direction = -direction;
+            direction = -direction;     //inverses direction. 
             Debug.Log("I reached the border");
         }
+        #endregion
+
     }
 
     void DonkeyDirection()
@@ -75,6 +76,7 @@ public class MoveDonkey : MonoBehaviour
 
         //this function changes the direction of the Donkey after a set amount of time.
 
+        #region Direction Change
         if (direction == 1) //if direction is currently 1 when fuction is called
         {
             direction = -1; //direction is set to -1. 
@@ -83,12 +85,13 @@ public class MoveDonkey : MonoBehaviour
         {
             direction = 1; //direction is set to 1. 
         }
+        #endregion
 
-        int timerSelector = Random.Range(0, 4);
-        float functionTimer = timerArray[timerSelector];
+        #region New Timer Value Selection
+        int timerSelector = Random.Range(0, 4);             //selects a random number between 0 and 4
+        float functionTimer = timerArray[timerSelector];    //sets float value equal to the selected array value. 
+        #endregion
 
         Invoke("DonkeyDirection", functionTimer);
     }
 }
-
-
