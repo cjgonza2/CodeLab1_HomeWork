@@ -32,19 +32,19 @@ public class Controller : MonoBehaviour
         if (Input.GetKey(KeyCode.UpArrow))
         {
             //Debug.Log("You pressed up.");
-            newPos.z += Time.deltaTime * speed;
+            newPos.z += Time.deltaTime * (speed + MoveDonkey.donkeySpeed);
         }      //if the player presses the up key the character moves forward.
         if (Input.GetKey(KeyCode.DownArrow))
         {
-            newPos.z -= Time.deltaTime * speed;
+            newPos.z -= Time.deltaTime * (speed + MoveDonkey.donkeySpeed);
         }    //if the player presses the down key the character moves backward.
         if (Input.GetKey(KeyCode.LeftArrow))
         {
-            newPos.x -= Time.deltaTime * speed;
+            newPos.x -= Time.deltaTime * (speed + MoveDonkey.donkeySpeed);
         }    //if the player presses the left key the character moves to the left. 
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            newPos.x += Time.deltaTime * speed;
+            newPos.x += Time.deltaTime * (speed + MoveDonkey.donkeySpeed);
         }   //if the player presses the right key the character moves to the right.
 
         transform.position = newPos; //updates the character's position.        
@@ -79,6 +79,19 @@ public class Controller : MonoBehaviour
     private void OnTriggerExit(Collider other) //if the player exits the Donkey's collider;
     {
         punch = false; //sets the punch variable to false.  
+    }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.collider.name == "Main Wall")
+        {
+            Vector3 borderPos = transform.position;
+
+            borderPos.z = -11;
+
+            transform.position = borderPos;
+        }
     }
 }
 
