@@ -5,22 +5,24 @@ using UnityEngine;
 public class W3PlayerPref : MonoBehaviour
 {
     public const string SAVE_POINT_KEY = "savePointKey";
+    public const string PUNCH_POINT_KEY = "punchPointKey";
 
-    public int SavePoint;
+    public static int SavePoint;
+    public static int resetValue = 0;
     
     // Start is called before the first frame update
     void Start()
     {
         SavePoint = PlayerPrefs.GetInt(SAVE_POINT_KEY);
         //if(SavePoint == 0)
-        Debug.Log(PlayerPrefs.GetInt(SAVE_POINT_KEY));
+        Debug.Log(SavePoint);
     }
 
     // Update is called once per frame
     void Update()
     {
-        //Debug.Log(SavePoint);
-        ///
+        Debug.Log("punch count: " + PlayerPrefs.GetInt(PUNCH_POINT_KEY));
+        PlayerPrefs.SetInt(PUNCH_POINT_KEY, W3Player.punchCount);
         #region Save Checks
         //These checks directly correspond to the player script save tag value. Depending on what that save tag is,
         //the playpref is automatically updated.

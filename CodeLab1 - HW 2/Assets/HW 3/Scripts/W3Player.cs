@@ -11,8 +11,8 @@ public class W3Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        roundTag = 0;
-        punchCount = 0;
+        roundTag = 0; //sets roundtag to 0
+        punchCount = 0; //sets punchcount to 0.
     }
 
     // Update is called once per frame
@@ -20,10 +20,9 @@ public class W3Player : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            roundTag ++;
             punchCount++;
             W3GameManager.healthValue--;
         }
-        Debug.Log(roundTag);
+        //Debug.Log(roundTag);
     }
 }

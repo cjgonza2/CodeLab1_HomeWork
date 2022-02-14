@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/HW 2/Scenes/Bad Scene.unity
     guid: cf5b98d3f85377c4491869e4af6a2e7b
   - enabled: 1
-    path: Assets/HW 3/Scenes/Start.unity
+    path: Assets/HW 3/Scenes/GameScreen.unity
     guid: 7cbd6c5717d979e4d8b5b2de6f5a9d8e
+  - enabled: 1
+    path: Assets/HW 3/Scenes/W3EndScene.unity
+    guid: 8f9183d609e2cb94e8ab7fc6fb9ab1c7
   m_configObjects: {}
