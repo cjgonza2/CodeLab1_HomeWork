@@ -11,7 +11,7 @@ public class W3Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        roundTag = 0; //sets roundtag to 0
+        roundTag = 1; //sets roundtag to 1
         punchCount = 0; //sets punchcount to 0.
     }
 
