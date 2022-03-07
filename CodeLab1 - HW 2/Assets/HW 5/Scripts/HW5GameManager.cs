@@ -34,13 +34,15 @@ public class HW5GameManager : MonoBehaviour
         Battle,
         RoundEnd,
         NewRound,
-        EndGame
+        EndGame,
+        GameOver
     }
 
     public GameObject player; //creates gameobject reference to player object. 
     public GameObject enemy; //creates gameobject reference to enemy object. 
 
     public Text timerText; //creates text reference for timer. 
+    public Text instructionText;
 
     public int playerHPvalue = 100; //sets an hp value for the player. 
     public int enemyHPvalue = 100; //sets an hp value for the enemy.
@@ -73,6 +75,7 @@ public class HW5GameManager : MonoBehaviour
         Debug.Log(currentState);
         playerHP.value = playerHPvalue; //sets the playerhp slider value to that of the player's current value.
         enemyHP.value = enemyHPvalue; //sets the enemyhp slider value to that of the enemy's current value. 
+        instructionText.text = "Press SPACE to do damage";
 
         if(currentState == State.Battle) //if the current state is the battle state,
         {
@@ -106,6 +109,8 @@ public class HW5GameManager : MonoBehaviour
         {
             TransitionState(State.EndGame); //transitions to end game state. 
         }
+
+
     }
 
     public void TransitionState(State newState)
@@ -151,8 +156,16 @@ public class HW5GameManager : MonoBehaviour
                 break;
 
             case State.EndGame:
-                
+
+                Invoke("EndGame", 0.5f);
+                TransitionState(State.GameOver);
                 break;
         }
+    }
+
+    public void EndGame()
+    {
+        SceneManager.LoadScene("HW5 - End Scene");
+        Destroy(this);
     }
 }
