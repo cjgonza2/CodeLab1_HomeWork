@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/HW 4/Scenes/HW 4 - End Scene.unity
     guid: 2cbee08b164e1b345b441d8825ffc3c3
+  - enabled: 1
+    path: Assets/HW 5/Scenes/HW5 - Game Scene.unity
+    guid: a5ddbb53cc9e74e45aa1a8531c26bef6
   m_configObjects: {}
