@@ -8,7 +8,6 @@ public class SphereControlls : MonoBehaviour
     
     [HideInInspector]
     public Rigidbody myBody; //creates a rigidbody reference. 
-
     [HideInInspector]
     public float playerXMove; //flaot value for ball's x movement to use in movement vector3
     [HideInInspector]
@@ -25,7 +24,7 @@ public class SphereControlls : MonoBehaviour
 
     protected virtual void FixedUpdate()
     {
-        Debug.Log(ballSpeed);
+        //Debug.Log(ballSpeed);
 
         PlayerControls();
     }
