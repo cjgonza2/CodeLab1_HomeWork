@@ -20,6 +20,7 @@ public class SphereControlls : MonoBehaviour
     protected virtual void Start()
     {
         myBody = GetComponent<Rigidbody>(); //assigns rigidbody component. 
+        
     }
 
     protected virtual void FixedUpdate()

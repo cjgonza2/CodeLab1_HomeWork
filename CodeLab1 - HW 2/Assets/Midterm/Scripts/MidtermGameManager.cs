@@ -77,8 +77,11 @@ public class MidtermGameManager : MidtermLevelLoader
         Invoke("LoadLevel", 0.05f);
     }
 
-    void ResetLevel()
+    public void LoadRaceWay()
     {
-        LevelName = "";
+        SceneManager.LoadScene("Race Scene");
+        currentScene = "RaceWay.txt";
+        LevelName = currentScene;
+        Invoke("LoadLevel", 0.05f);
     }
 }
