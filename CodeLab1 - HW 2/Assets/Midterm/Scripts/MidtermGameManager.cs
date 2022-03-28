@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class MidtermGameManager : MidtermLevelLoader
@@ -14,6 +15,7 @@ public class MidtermGameManager : MidtermLevelLoader
     }
     #endregion
 
+    public Text endText;
 
     string currentScene = "";
     
@@ -35,40 +37,29 @@ public class MidtermGameManager : MidtermLevelLoader
             DontDestroyOnLoad(gameObject);
         }
         #endregion
-
-        //currentScene = SceneManager.GetActiveScene().name;
-        
-        //if(LevelName == "JustABox.txt")
-        //{
-        //    Debug.Log(LevelName);
-        //    Invoke("LoadLevel", 0.5f);
-        //}
-    
     }
 
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        ////Debug.Log(currentScene);
-        //if (currentScene == "JustABox.txt")
-        //{
-        //    LoadLevel();
-
-        //    Invoke("ResetLevel", 0f);
-        //}
-
+        if(currentScene == "JustABox.txt")
+        {
+            if (PlayerOne.lifePoints == 0)
+            {
+                SceneManager.LoadScene("Midterm EndScene");
+            } else if (PlayerTwo.lifePoints == 0)
+            {
+                SceneManager.LoadScene("Midterm EndScene 2");
+            }
+        }
     }
 
-    //public void SceneChanger(string Level)
-    //{
-    //    SceneManager.LoadScene(Level);
-    //}
-
+    /// <summary>
+    /// This funciton when called (by UI button press)
+    /// will load the game scene, change the current scene
+    /// string to "JustABox.txt" and set that to the 
+    /// level loader's string and then call the inherited
+    /// load level function.
+    /// </summary>
     public void LoadJustABox()
     {
         SceneManager.LoadScene("Game Scene");
@@ -77,6 +68,12 @@ public class MidtermGameManager : MidtermLevelLoader
         Invoke("LoadLevel", 0.05f);
     }
 
+    /// <summary>
+    /// This funciton when called (by UI button press)
+    /// will load the race way scene, change the current scene 
+    /// string to "Raceway.txt" and set that to the level  loader's
+    /// string and then call the inherited load level function. 
+    /// </summary>
     public void LoadRaceWay()
     {
         SceneManager.LoadScene("Race Scene");

@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Powered Up
+  - Void
+  - Race End 1
+  - Race End 2
   layers:
   - Default
   - TransparentFX

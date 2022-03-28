@@ -50,4 +50,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Midterm/Scenes/Race Scene.unity
     guid: bdbac3701b83e9f408410d3b9263546c
+  - enabled: 1
+    path: Assets/Midterm/Scenes/Midterm EndScene 1.unity
+    guid: 5fb20181b9077794d8717237a6ef07ae
   m_configObjects: {}

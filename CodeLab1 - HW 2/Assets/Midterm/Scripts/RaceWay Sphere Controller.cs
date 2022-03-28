@@ -1,12 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class SphereControlls : MonoBehaviour
+public class RaceWaySphereController : MonoBehaviour
 {
     public float ballSpeed = 10; //sets float value for the ball's speed. 
-    
+
     [HideInInspector]
     public Rigidbody myBody; //creates a rigidbody reference. 
     [HideInInspector]
@@ -14,33 +13,14 @@ public class SphereControlls : MonoBehaviour
     [HideInInspector]
     public float playerZMove; //float value for ball's z movement to use in movement vector3
 
-    public Material baseColor;
-    public Material powerUpColor;
-
-    public static bool powerUpOn;
-    public static int lifePoints = 3;
-
-    public string playerName;
-    public Text Health;
-
-
-    //float playerTwoXMove;
-    //float playerTwoZMove;
-    
-    // Start is called before the first frame update
     protected virtual void Start()
     {
         myBody = GetComponent<Rigidbody>(); //assigns rigidbody component. 
-        powerUpOn = false;
     }
 
     protected virtual void FixedUpdate()
     {
-        //Debug.Log(ballSpeed);
-
         PlayerControls();
-
-        Health.text = playerName + " HP: " + lifePoints;
     }
 
     protected virtual void PlayerControls()
@@ -58,25 +38,4 @@ public class SphereControlls : MonoBehaviour
         myBody.AddForce(playerOneMove * ballSpeed);
     }
 
-    protected virtual void OnTriggerEnter(Collider other)
-    {
-        powerUpOn = true;
-        PowerUp();
-    }
-
-    protected virtual void PowerUp()
-    {
-        gameObject.GetComponent<Renderer>().material = powerUpColor;
-        gameObject.tag = "Powered Up";
-        Invoke("PowerDown", 5f);
-    }
-
-    protected virtual void PowerDown()
-    {
-        powerUpOn = false;
-        gameObject.GetComponent<Renderer>().material = baseColor;
-        gameObject.tag = "Player";
-        Debug.Log("powering down");
-
-    }
 }
