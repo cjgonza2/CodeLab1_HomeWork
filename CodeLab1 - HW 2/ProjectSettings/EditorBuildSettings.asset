@@ -53,4 +53,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Midterm/Scenes/Midterm EndScene 1.unity
     guid: 5fb20181b9077794d8717237a6ef07ae
+  - enabled: 1
+    path: Assets/Midterm/Scenes/Midterm EndScene 2.unity
+    guid: 324914cf517c9d949a817d271d7c2b70
+  - enabled: 1
+    path: Assets/Midterm/Scenes/Hill Scene.unity
+    guid: e287d9d32e7d40d4d8c95caa230b63ce
   m_configObjects: {}

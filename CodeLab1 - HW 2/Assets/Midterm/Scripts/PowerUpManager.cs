@@ -5,9 +5,9 @@ using UnityEngine;
 public class PowerUpManager : MonoBehaviour
 {
 
-    public GameObject powerUpTop;
+    //public GameObject powerUpTop;
     public GameObject powerUpMid;
-    public GameObject powerUpBot;
+    //public GameObject powerUpBot;
 
     float powerUpValue;
 

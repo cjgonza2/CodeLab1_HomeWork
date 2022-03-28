@@ -15,15 +15,13 @@ public class MidtermGameManager : MidtermLevelLoader
     }
     #endregion
 
-    public Text endText;
-
-    string currentScene = "";
+    public string currentScene = "";
     
     // Start is called before the first frame update
     void Awake()
     {
 
-        Debug.Log("wakey wakey");
+        //Debug.Log("wakey wakey");
 
         #region Singleton
         //Singleton loop to prevent multiple instance of the GameManager.
@@ -41,14 +39,22 @@ public class MidtermGameManager : MidtermLevelLoader
 
     void Update()
     {
-        if(currentScene == "JustABox.txt")
+        if (currentScene == "JustABox.txt" || currentScene == "KingHill.txt")
         {
-            if (PlayerOne.lifePoints == 0)
+
+            if (GameObject.Find("Player 1").GetComponent<PlayerOne>().lifePoints == 0)
             {
-                SceneManager.LoadScene("Midterm EndScene");
-            } else if (PlayerTwo.lifePoints == 0)
-            {
+
+                Debug.Log("Player 2 wins");
+                
                 SceneManager.LoadScene("Midterm EndScene 2");
+            } 
+            else if (GameObject.Find("Player 2").GetComponent<PlayerTwo>().lifePoints == 0)
+            {
+
+                Debug.Log("Player 1 wins");
+                
+                SceneManager.LoadScene("Midterm EndScene 1");
             }
         }
     }
@@ -78,6 +84,14 @@ public class MidtermGameManager : MidtermLevelLoader
     {
         SceneManager.LoadScene("Race Scene");
         currentScene = "RaceWay.txt";
+        LevelName = currentScene;
+        Invoke("LoadLevel", 0.05f);
+    }
+
+    public void LoadKingHill()
+    {
+        SceneManager.LoadScene("Hill Scene");
+        currentScene = "KingHill.txt";
         LevelName = currentScene;
         Invoke("LoadLevel", 0.05f);
     }

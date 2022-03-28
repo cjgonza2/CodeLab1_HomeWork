@@ -39,7 +39,7 @@ public class MidtermLevelLoader : MonoBehaviour
         for(int x = 0; x < stringRow.Length; x++)
         {
             char c = rowArray[x];
-            if(c == 'W')
+            if (c == 'W')
             {
                 GameObject WALL = Instantiate(Resources.Load("Wall")) as GameObject;
                 WALL.transform.position = new Vector3(

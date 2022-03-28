@@ -18,7 +18,7 @@ public class SphereControlls : MonoBehaviour
     public Material powerUpColor;
 
     public static bool powerUpOn;
-    public static int lifePoints = 3;
+    public int lifePoints = 3;
 
     public string playerName;
     public Text Health;
@@ -49,8 +49,8 @@ public class SphereControlls : MonoBehaviour
         //Input getaxis returns a value between -1 and 1
         //if we were using joystick it would return antyhing inbetween based on how far the joystick is pressed.
         //since we're using a keyboard here it's only going to return -1 or 1
-        playerXMove = Input.GetAxis("Horizontal");
-        playerZMove = Input.GetAxis("Vertical");
+        playerXMove = Input.GetAxisRaw("Horizontal");
+        playerZMove = Input.GetAxisRaw("Vertical");
 
         //creates a vector 3 with the assigned x and z ballmove values and
         //adds force to the sphere based on it and in relation to the ball's speed value. 
