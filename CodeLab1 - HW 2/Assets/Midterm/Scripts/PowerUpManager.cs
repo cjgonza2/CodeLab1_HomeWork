@@ -23,6 +23,9 @@ public class PowerUpManager : MonoBehaviour
 
     void Update()
     {
+        //This if statement checks if the powerUpOn bool is active,
+        //if it is true, it will deactivate the power up. Otherwise
+        //it will be active. 
         if (PlayerOne.powerUpOn || PlayerTwo.powerUpOn == true)
         {
             powerUpMid.SetActive(false);

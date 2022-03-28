@@ -39,9 +39,11 @@ public class MidtermGameManager : MidtermLevelLoader
 
     void Update()
     {
+        //if the current scene is equal to either of these two strings. 
         if (currentScene == "JustABox.txt" || currentScene == "KingHill.txt")
         {
 
+            //if player one's lifepoints == 0, loads EndScene 2.
             if (GameObject.Find("Player 1").GetComponent<PlayerOne>().lifePoints == 0)
             {
 
@@ -49,6 +51,7 @@ public class MidtermGameManager : MidtermLevelLoader
                 
                 SceneManager.LoadScene("Midterm EndScene 2");
             } 
+            //if player 2 lifepoints equals 0, loads endScene 1.
             else if (GameObject.Find("Player 2").GetComponent<PlayerTwo>().lifePoints == 0)
             {
 
@@ -88,6 +91,13 @@ public class MidtermGameManager : MidtermLevelLoader
         Invoke("LoadLevel", 0.05f);
     }
 
+
+    /// <summary>
+    /// This funciton when called (by UI button press)
+    /// will load the race way scene, change the current scene 
+    /// string to "KingHill.txt" and set that to the level  loader's
+    /// string and then call the inherited load level function. 
+    /// </summary>
     public void LoadKingHill()
     {
         SceneManager.LoadScene("Hill Scene");

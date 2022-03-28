@@ -21,6 +21,9 @@ public class RaceWaySphereController : MonoBehaviour
     protected virtual void FixedUpdate()
     {
         PlayerControls();
+
+        //why fixedupdate and no update?
+        //because when using addforce, you have to use fixed update. 
     }
 
     protected virtual void PlayerControls()
@@ -29,8 +32,8 @@ public class RaceWaySphereController : MonoBehaviour
         //Input getaxis returns a value between -1 and 1
         //if we were using joystick it would return antyhing inbetween based on how far the joystick is pressed.
         //since we're using a keyboard here it's only going to return -1 or 1
-        playerXMove = Input.GetAxis("Horizontal");
-        playerZMove = Input.GetAxis("Vertical");
+        playerXMove = Input.GetAxisRaw("Horizontal");
+        playerZMove = Input.GetAxisRaw("Vertical");
 
         //creates a vector 3 with the assigned x and z ballmove values and
         //adds force to the sphere based on it and in relation to the ball's speed value. 

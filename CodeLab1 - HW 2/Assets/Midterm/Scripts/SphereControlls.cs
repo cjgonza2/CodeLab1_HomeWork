@@ -58,12 +58,22 @@ public class SphereControlls : MonoBehaviour
         myBody.AddForce(playerOneMove * ballSpeed);
     }
 
+    /// <summary>
+    /// this function, when entering a trigger, will set
+    /// the powerUpOn to true and calls the power up function.
+    /// </summary>
     protected virtual void OnTriggerEnter(Collider other)
     {
         powerUpOn = true;
         PowerUp();
     }
 
+    /// <summary>
+    /// This functions changes the material of the player object
+    /// to the power up color (yellow). It then changes the player that gets
+    /// the power up's tag to "Powered Up" and then calls the power down function
+    /// after 5 seconds. 
+    /// </summary>
     protected virtual void PowerUp()
     {
         gameObject.GetComponent<Renderer>().material = powerUpColor;
@@ -71,6 +81,10 @@ public class SphereControlls : MonoBehaviour
         Invoke("PowerDown", 5f);
     }
 
+    /// <summary>
+    /// sets powerUpOn bool to false and resets the player object's color back 
+    /// to base color. then it resets the player's tag. 
+    /// </summary>
     protected virtual void PowerDown()
     {
         powerUpOn = false;
