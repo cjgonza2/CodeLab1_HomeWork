@@ -9,6 +9,8 @@ TagManager:
   - Race End 1
   - Race End 2
   - Powered Up 2
+  - Relic
+  - Solution
   layers:
   - Default
   - TransparentFX
