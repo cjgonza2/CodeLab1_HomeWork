@@ -11,6 +11,8 @@ TagManager:
   - Powered Up 2
   - Relic
   - Solution
+  - Reset Position
+  - Goal
   layers:
   - Default
   - TransparentFX
