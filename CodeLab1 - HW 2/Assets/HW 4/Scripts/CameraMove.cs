@@ -6,6 +6,8 @@ public class CameraMove : MonoBehaviour
 {
     public GameObject Player; //creates an assignable gameobject of the player for the camera to follow. 
     public float cameraHeight; //value to determine how far camera is from player object. 
+    public float cameraDistance; //value to determine how far away the  camera is from player on x axis.
+
 
     private static CameraMove instance; //creates a private assignable instance
     private static CameraMove GetInstance() //returns this script/Object's instance as the primary instance.
@@ -33,8 +35,13 @@ public class CameraMove : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 pos = Player.transform.position; //creates a new vector 3 based on the player object's transform position. 
-        pos.y = cameraHeight; //sets the vector 3's y position equal to cameraheight value. 
+        Vector3 pos = new Vector3(
+            Player.transform.position.x,
+            cameraHeight,
+            cameraDistance);
+            
+        //Player.transform.position; //creates a new vector 3 based on the player object's transform position. 
+        //pos.y = cameraHeight; //sets the vector 3's y position equal to cameraheight value. 
         transform.position = pos;   //sets the transform equal to vector 3. 
     }
 }
