@@ -1,30 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FinalGameManager : MonoBehaviour
 {
 
-    public bool npcFinish;
-    public bool playerFinish;
-    
-    void Start()
+    static FinalGameManager instance;
+    static FinalGameManager GetInstance()
     {
-        npcFinish = false;
-        playerFinish = false;
-
+        return instance;
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Awake()
     {
-        if (npcFinish == true)
+        if(instance != null && instance != this)
         {
-            Debug.Log("the npc finished first");
+            Destroy(this);
         }
-        if (playerFinish == true)
+        else
         {
-            Debug.Log("player finished first");
+            instance = this;
+            DontDestroyOnLoad(gameObject);
         }
+    }
+
+    public void LoadScene(string levelName)
+    {
+        SceneManager.LoadScene(levelName);
     }
 }

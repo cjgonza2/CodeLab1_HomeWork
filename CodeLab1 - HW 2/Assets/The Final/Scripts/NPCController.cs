@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Util;
+//using Util;
 using Pathfinding;
+using UnityEngine.SceneManagement;
 
 public class NPCController : MonoBehaviour
 {
@@ -36,18 +37,19 @@ public class NPCController : MonoBehaviour
         seeker = GetComponent<Seeker>();
         controller = GetComponent<CharacterController>();
 
+        //Creates the path
         seeker.StartPath(transform.position, target.transform.position, OnPathComplete);
     }
 
     // Update is called once per frame
     void Update()
     {
-       if(SightUtil.CanSeeObj(player, gameObject, sight))
-        {
-            Debug.Log("can see player");
-        }
+       //if(SightUtil.CanSeeObj(player, gameObject, sight))
+       // {
+       //     Debug.Log("can see player");
+       // }
 
-        SightUtil.ObjSide(player, gameObject);
+       // SightUtil.ObjSide(player, gameObject);
 
         ///where on the path are we.
         ///if middle of the path, which waypoint are we
@@ -111,6 +113,14 @@ public class NPCController : MonoBehaviour
             //if we had a path previsouly this
             //resets it. 
             currentWaypoint = 0;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Goal"))
+        {
+            SceneManager.LoadScene("Final Lose Screen");
         }
     }
 }

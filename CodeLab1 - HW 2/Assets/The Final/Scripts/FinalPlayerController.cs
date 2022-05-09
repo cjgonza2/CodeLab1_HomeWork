@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class FinalPlayerController : MonoBehaviour
 {
@@ -87,6 +88,11 @@ public class FinalPlayerController : MonoBehaviour
             playerController.enabled = false;
             playerController.transform.position = spawnPos;
             playerController.enabled = true;
+        }
+
+        if (other.gameObject.CompareTag("Goal"))
+        {
+            SceneManager.LoadScene("Final Win Scene");
         }
     }
 }
