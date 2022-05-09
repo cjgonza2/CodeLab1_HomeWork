@@ -14,6 +14,7 @@ public class XUtil : MonoBehaviour
     //fixed update seems to be a solution. 
     void FixedUpdate()
     {
+        //creates a timer variable and adds the result of deltaTime and Frequency to it. 
         timer += Time.deltaTime * frequency;
         
         float x = transform.position.x;
