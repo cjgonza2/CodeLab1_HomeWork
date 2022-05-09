@@ -71,4 +71,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/HW 8/Scenes/HW 8 End Scene.unity
     guid: 24ac79d23d515d249971ee2ad68466b9
+  - enabled: 1
+    path: Assets/The Final/Scenes/Final Game.unity
+    guid: 4146125b56dc5bf4b9233ec98ea3a21c
+  - enabled: 1
+    path: Assets/The Final/Scenes/Final Start Screen.unity
+    guid: aff772d6878f8914b9684dee62549150
   m_configObjects: {}

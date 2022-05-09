@@ -38,7 +38,7 @@ public class CameraMove : MonoBehaviour
         Vector3 pos = new Vector3(
             Player.transform.position.x,
             cameraHeight,
-            cameraDistance);
+            Player.transform.position.z - cameraDistance);
             
         //Player.transform.position; //creates a new vector 3 based on the player object's transform position. 
         //pos.y = cameraHeight; //sets the vector 3's y position equal to cameraheight value. 
