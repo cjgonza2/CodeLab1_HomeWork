@@ -8,14 +8,19 @@ public class UpUtil : MonoBehaviour
     public float amplitude;
     public float frequency;
 
+    float timer = 0;
+
 
     // Update is called once per frame
     void FixedUpdate()
     {
+
+        timer += Time.deltaTime * frequency;
+
         float x = transform.position.x;
         float y = transform.position.y;
         float z = transform.position.z;
-        float sin = Mathf.Sin(Time.time * frequency) * amplitude;
+        float sin = Mathf.Sin(timer) * amplitude;
 
         //sets the transform position of object to the x y and z variable while adding the cosine calculation to the x value
         //causing it to move back and forth.
